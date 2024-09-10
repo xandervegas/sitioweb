@@ -1,0 +1,73 @@
+// _variables.scss
+$primary-color: #f7cac9;
+$text-color: #333;
+$font-size-base: 16px;
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: $font-size-base;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+h2 {
+  color: $text-color;
+  margin-bottom: 20px;
+}
+
+// _mixins.scss
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin transition($property, $duration) {
+  transition: $property $duration;
+  -webkit-transition: $property $duration;
+  -moz-transition: $property $duration;
+  -o-transition: $property $duration;
+}
+// _layout.scss
+.navbar {
+  background-color: $primary-color;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.contact-info,
+.contact-form {
+  background-color: $primary-color;
+  padding: 30px;
+  @include border-radius(10px);
+  margin-bottom: 20px;
+}
+.doctor-card {
+  background-color: $primary-color;
+  padding: 20px;
+  @include border-radius(10px);
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  @include transition(opacity, 0.6s);
+}
+
+.doctor-card img {
+  @include border-radius(50%);
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
